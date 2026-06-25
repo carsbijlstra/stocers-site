@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>STOCERS — Wood Wool Firelighters</title>
+<meta name="description" content="STOCERS produces premium wood wool firelighters. One match, every time — natural, odorless and made for those who light fires every day. Become a dealer." />
+<link rel="stylesheet" href="styles.css" />
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- ──────────────────────────── NAV ──────────────────────────── -->
+<nav class="nav">
+  <a href="#top" class="nav__logo" aria-label="STOCERS">
+    <img src="assets/stocers-logo-white.png" alt="STOCERS" />
+  </a>
+  <div class="nav__right">
+    <div class="nav__links">
+      <a href="#product">Product</a>
+      <a href="#in-use">In use</a>
+      <a href="#packaging">Order sizes</a>
+    </div>
+    <a href="#dealer" class="nav__cta">Become a dealer</a>
+  </div>
+</nav>
+
+<!-- ──────────────────────────── HERO ──────────────────────────── -->
+<header class="hero" id="top" data-screen-label="01 Hero">
+  <div class="hero__flames"><canvas></canvas></div>
+  <div class="embers" aria-hidden="true"></div>
+
+  <div class="hero__eyebrow">Wood Wool Firelighters</div>
+  <h1 class="hero__title" data-headline>Your <em>fire</em> starts here.</h1>
+  <p class="hero__sub">STOCERS produces premium wood wool firelighters — one match, every time. Natural, odorless and made for everyone who lights a fire, every day.</p>
+  <div class="hero__actions">
+    <a href="#dealer" class="btn btn--ember">Become a dealer</a>
+    <a href="#product" class="btn btn--ghost">See the product</a>
+  </div>
+
+  <div class="hero__scroll">Scroll</div>
+</header>
+
+<!-- ──────────────────────────── STATEMENT ──────────────────────────── -->
+<section class="statement" data-screen-label="02 Manifesto">
+  <div class="statement__inner">
+    <div class="statement__copy">
+      <p class="statement__meta">The STOCERS promise</p>
+      <h2 class="statement__quote reveal">
+        STOCERS. For every <span>fire</span>.
+      </h2>
+      <p class="statement__caption reveal">One curl. One match. Every fire, lit.</p>
+    </div>
+    <figure class="statement__photo reveal">
+      <img src="assets/firelighter-flame.webp" alt="A STOCERS wood wool firelighter burning with a clean, natural flame" />
+    </figure>
+  </div>
+</section>
+
+<!-- ──────────────────────────── PRODUCT ──────────────────────────── -->
+<section class="lineup" id="product" data-screen-label="03 Product">
+  <div class="lineup__inner">
+    <div class="lineup__head reveal">
+      <div class="lineup__eyebrow">The product</div>
+      <h2 class="lineup__title">Wood wool firelighters.</h2>
+      <p class="lineup__lead">Twisted wood wool, dipped in natural wax — just two ingredients. One curl catches with a single match and burns 8 to 10 minutes, long enough to get any fire going.</p>
+      <ul class="ecochips" aria-label="Product credentials">
+        <li>Eco-friendly</li>
+        <li>Neutral-scented</li>
+        <li>FSC certified</li>
+        <li>No chemicals</li>
+      </ul>
+    </div>
+
+    <figure class="lineup__shots reveal">
+      <img src="assets/firelighter-single.webp" alt="A single STOCERS wood wool firelighter curl" />
+      <img src="assets/box-interior.jpg" alt="A box filled with STOCERS wood wool firelighters" />
+      <img src="assets/firelighter-pile.webp" alt="A pile of STOCERS wood wool firelighter curls" />
+    </figure>
+
+    <ol class="lineup__items">
+      <li class="lineup__item reveal">
+        <div class="lineup__item-head">
+          <span class="lineup__num">01</span>
+          <span class="lineup__pack">One match</span>
+        </div>
+        <h3 class="lineup__item-title">Easy to use</h3>
+        <p class="lineup__item-body">One match, no kindling and no paper. Lay a curl, strike, and it catches straight away.</p>
+      </li>
+      <li class="lineup__item reveal">
+        <div class="lineup__item-head">
+          <span class="lineup__num">02</span>
+          <span class="lineup__pack">8–10 min</span>
+        </div>
+        <h3 class="lineup__item-title">Long burning time</h3>
+        <p class="lineup__item-body">A steady 8 to 10 minutes per curl — time enough for even larger logs to catch.</p>
+      </li>
+      <li class="lineup__item reveal">
+        <div class="lineup__item-head">
+          <span class="lineup__num">03</span>
+          <span class="lineup__pack">High output</span>
+        </div>
+        <h3 class="lineup__item-title">Large flame</h3>
+        <p class="lineup__item-body">A strong, generous flame that gets serious fires going fast, in any conditions.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ──────────────────────────── IN USE ──────────────────────────── -->
+<section class="inuse" id="in-use" data-screen-label="04 In use">
+  <div class="inuse__inner">
+    <div class="inuse__head reveal">
+      <div class="inuse__eyebrow">All-season &amp; universal</div>
+      <h2 class="inuse__title">One firelighter. Every fire.</h2>
+      <p class="inuse__lead">Just as effective in deep winter as on a warm summer evening. A single curl ignites wood, briquettes, charcoal, eco-pea coal and pellets — ideal for stoves, ovens, barbecues, kamados, chimineas, campfires and fire pits. Useful all year round.</p>
+    </div>
+
+    <div class="inuse__grid">
+      <figure class="usecard reveal">
+        <img src="assets/use-firewood.webp" alt="A STOCERS wood wool firelighter lighting a stack of firewood" />
+        <figcaption>Firewood &amp; stoves</figcaption>
+      </figure>
+      <figure class="usecard reveal">
+        <img src="assets/use-charcoal.jpg" alt="A STOCERS wood wool firelighter lighting charcoal in a kamado" />
+        <figcaption>Charcoal &amp; kamado</figcaption>
+      </figure>
+      <figure class="usecard reveal">
+        <img src="assets/use-outdoor.jpg" alt="A STOCERS wood wool firelighter burning outdoors" />
+        <figcaption>BBQ &amp; outdoor</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────── BURN-TIME QUOTE ──────────────────────────── -->
+<section class="burnquote" data-screen-label="05 Burn time">
+  <blockquote class="burnquote__inner reveal">
+    <p class="burnquote__text">Each curl burns a steady <span>8 to 10 minutes</span> — long enough to get any fire going.</p>
+    <footer class="burnquote__meta">Burn time per firelighter</footer>
+  </blockquote>
+</section>
+
+<!-- ──────────────────────────── PACKAGING ──────────────────────────── -->
+<section class="packs" id="packaging" data-screen-label="06 Order sizes">
+  <div class="packs__inner">
+    <div class="packs__head reveal">
+      <div class="packs__eyebrow">Order sizes &amp; supply</div>
+      <h2 class="packs__title">Sold by the full pallet.</h2>
+      <p class="packs__lead">Every order ships from one full pallet, straight from our own warehouse — fast delivery, right across Europe.</p>
+    </div>
+
+    <div class="packs__grid2">
+      <article class="pbox reveal">
+        <figure class="pbox__img"><img src="assets/box-5kg.jpg" alt="A closed 5 kg STOCERS box of wood wool firelighters" /></figure>
+        <div class="pbox__body">
+          <div class="pbox__head"><h3>5 kg box</h3><span class="pbox__badge">Retail-ready</span></div>
+          <dl class="pbox__specs">
+            <div><dt>Material</dt><dd>Wax-dipped wood wool</dd></div>
+            <div><dt>Burn time</dt><dd>8–10 min / piece</dd></div>
+            <div><dt>Availability</dt><dd>From own stock</dd></div>
+          </dl>
+        </div>
+      </article>
+      <article class="pbox reveal">
+        <figure class="pbox__img"><img src="assets/box-15kg.png" alt="An open 15 kg STOCERS box filled with wood wool firelighters" /></figure>
+        <div class="pbox__body">
+          <div class="pbox__head"><h3>15 kg box</h3><span class="pbox__badge">Bulk</span></div>
+          <dl class="pbox__specs">
+            <div><dt>Material</dt><dd>Wax-dipped wood wool</dd></div>
+            <div><dt>Burn time</dt><dd>8–10 min / piece</dd></div>
+            <div><dt>Availability</dt><dd>From own stock</dd></div>
+          </dl>
+        </div>
+      </article>
+    </div>
+
+    <figure class="packs__supply reveal">
+      <img src="assets/pallet.png" alt="A full pallet of STOCERS firelighter boxes ready to ship" />
+      <figcaption>
+        <span class="packs__stock">Delivered from stock</span>
+        <p class="packs__supply-text">Ordered today and shipped fast — from one full pallet, straight from our own warehouse.</p>
+        <p class="packs__note">Minimum order: one full pallet — mixed box sizes possible.</p>
+        <button type="button" class="btn btn--bordeaux packs__cta" data-open-samples>Request a quote
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ──────────────────────────── PRIVATE LABEL ──────────────────────────── -->
+<section class="plabel" id="private-label" data-screen-label="07 Private label">
+  <div class="plabel__inner reveal">
+    <div class="plabel__eyebrow">Private label</div>
+    <h2 class="plabel__title">Your brand, our firelighters.</h2>
+    <p class="plabel__lead">Want STOCERS quality under your own name? We produce private label per full truck load — your own box and bag design, made to your specification. Talk to us about volumes and lead times.</p>
+    <a class="btn btn--ember plabel__cta" data-mail-pl href="#">Ask about private label
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ──────────────────────────── DEALER ──────────────────────────── -->
+<section class="dealer" id="dealer" data-screen-label="08 Become a dealer">
+  <div class="dealer__inner">
+    <div class="dealer__copy reveal">
+      <div class="dealer__kicker">Become a dealer</div>
+      <h2 class="dealer__title">Sell STOCERS.</h2>
+      <p class="dealer__lead">
+        Run a shop, webshop, BBQ store or fireplace specialist? STOCERS firelighters sell themselves — thanks to the recognizable red box and proven quality. Get in touch for wholesale terms.
+      </p>
+      <ul class="dealer__list">
+        <li>Attractive margins from the first pallet</li>
+        <li>Delivered from stock, across Europe</li>
+        <li>Recognizable, retail-ready red box</li>
+      </ul>
+      <a class="dealer__mail" data-mail href="#">Or email us directly</a>
+      <figure class="dealer__photo">
+        <img src="assets/stocers-bbq-box.jpg" alt="STOCERS dealer with the recognizable red wood wool firelighter box" />
+      </figure>
+    </div>
+
+    <form class="form reveal" id="dealer-form" novalidate>
+      <div class="form__row form__row--2">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required placeholder="First and last name" />
+        </div>
+        <div class="field">
+          <label for="company">Company</label>
+          <input id="company" name="company" type="text" required placeholder="Company name" />
+        </div>
+      </div>
+      <div class="form__row">
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="name@company.com" />
+        </div>
+      </div>
+      <div class="form__row">
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us briefly about your business."></textarea>
+        </div>
+      </div>
+      <!-- honeypot: bots fill this, humans don't -->
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;" aria-hidden="true" />
+      <p class="form__status" data-status role="status" aria-live="polite"></p>
+      <button type="submit" data-submit class="btn btn--ember form__submit">Request wholesale terms</button>
+    </form>
+  </div>
+</section>
+
+<!-- ──────────────────────────── FOOTER ──────────────────────────── -->
+<footer class="footer" data-screen-label="09 Footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <span class="footer__lockup"><img src="assets/stocers-logo-white.png" alt="STOCERS" /></span>
+      <p class="footer__tag">STOCERS produces premium wood wool firelighters. One match, every time.</p>
+    </div>
+    <div class="footer__col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#product">The product</a></li>
+        <li><a href="#in-use">In use</a></li>
+        <li><a href="#packaging">Order sizes</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Dealers</h4>
+      <ul>
+        <li><a href="#dealer">Become a dealer</a></li>
+        <li><a href="#private-label">Private label</a></li>
+        <li><a href="#dealer" data-mail-foot>Email us</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Free samples</h4>
+      <ul>
+        <li><a href="#dealer" data-open-samples>Request free samples</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__legal">
+    <span>© <span id="year">2026</span> STOCERS. All rights reserved.</span>
+    <span>STOCERS. For every fire.</span>
+  </div>
+</footer>
+
+<!-- ──────────────────────────── SAMPLES POPUP ──────────────────────────── -->
+<div class="samples" id="samples" data-state="hidden" aria-hidden="true">
+  <div class="samples__overlay" data-close-samples></div>
+  <div class="samples__dialog" role="dialog" aria-modal="true" aria-labelledby="samples-title">
+    <button class="samples__close" type="button" aria-label="Close" data-close-samples>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+
+    <div class="samples__art">
+      <div class="samples__art-glow"></div>
+      <img src="assets/stocers-burning-krul.png" alt="A burning STOCERS wood wool firelighter" />
+    </div>
+
+    <div class="samples__body">
+      <div class="samples__kicker">Free for traders</div>
+      <h2 class="samples__title" id="samples-title">Get our <em>free samples</em></h2>
+      <p class="samples__text">Interested in the best wood wool firelighters from STOCERS? Leave your company and contact details to receive <strong>FREE SAMPLES</strong>. You'll get the package and a commercial proposal within 3 to 5 days. We guarantee our products are the absolute best on the firewood-products market.</p>
+
+      <form class="samples__form" id="samples-form" novalidate>
+        <div class="samples__fields">
+          <input name="company" type="text" required placeholder="Company name" aria-label="Company name" />
+          <input name="email" type="email" required placeholder="Work email" aria-label="Work email" />
+        </div>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;" aria-hidden="true" />
+        <button type="submit" data-submit class="btn btn--ember samples__submit">Send me free samples</button>
+        <p class="samples__status" data-status role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Tweaks mount -->
+<div id="tweaks-root"></div>
+
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="app.jsx"></script>
+
+</body>
+</html>
