@@ -1074,8 +1074,9 @@ a { color: inherit; text-decoration: none; }
 }
 .dealer__photo img {
   width: 100%; height: 100%;
-  aspect-ratio: 16 / 11;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
+  object-position: 60% 12%;
   display: block;
 }
 .dealer .form { align-self: start; }
@@ -1227,12 +1228,22 @@ a { color: inherit; text-decoration: none; }
 .samples__status[data-state="success"] { color: #1F8A5B; }
 
 @media (max-width: 720px) {
-  .samples { padding: 14px; }
-  .samples__dialog { grid-template-columns: 1fr; max-height: calc(100vh - 28px); }
-  .samples__art { min-height: 200px; }
-  .samples__art img { width: 56%; }
-  .samples__body { padding: 32px 26px 28px; }
+  .samples { padding: 12px; }
+  .samples__dialog {
+    grid-template-columns: 1fr;
+    display: block;
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .samples__art { min-height: 0; height: 150px; }
+  .samples__art img { width: auto; height: 116px; }
+  .samples__body { padding: 24px 22px 26px; overflow: visible; }
+  .samples__kicker { margin-bottom: 12px; }
+  .samples__title { font-size: 30px; margin-bottom: 12px; }
+  .samples__text { font-size: 14px; line-height: 1.5; margin-bottom: 20px; }
   .samples__fields { grid-template-columns: 1fr; }
+  .samples__close { background: rgba(255,255,255,0.18); color: var(--cream); top: 12px; right: 12px; }
 }
 
 /* ──────────────────────────── eco chips (on red product) ──────────────────────────── */
