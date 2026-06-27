@@ -29,6 +29,7 @@ function startFlameCanvas(canvas, opts = {}) {
   let W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
   let intensity = opts.intensity || 1;
   let accent = opts.accent || ACCENTS.ember;
+  let widthScale = 1;
 
   const resize = () => {
     const r = canvas.getBoundingClientRect();
@@ -36,6 +37,8 @@ function startFlameCanvas(canvas, opts = {}) {
     canvas.width = W * dpr;
     canvas.height = H * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    // narrow viewports: smaller, fewer, softer flames so they don't engulf the hero
+    widthScale = Math.max(0.32, Math.min(1, W / 1100));
   };
   resize();
   window.addEventListener('resize', resize);
@@ -46,14 +49,14 @@ function startFlameCanvas(canvas, opts = {}) {
     const y = H + 10;
     const vy = -(1.2 + Math.random() * 1.8) * intensity;
     const vx = (Math.random() - 0.5) * 0.6;
-    const r = 40 + Math.random() * 80;
+    const r = (40 + Math.random() * 80) * widthScale;
     const life = 80 + Math.random() * 90;
     particles.push({ x, y, vx, vy, r, life, age: 0 });
   };
 
   const draw = () => {
     ctx.clearRect(0, 0, W, H);
-    const spawns = Math.max(1, Math.floor(4 * intensity));
+    const spawns = Math.max(1, Math.round(4 * intensity * widthScale));
     for (let i = 0; i < spawns; i++) spawn();
 
     ctx.globalCompositeOperation = 'lighter';
@@ -68,7 +71,7 @@ function startFlameCanvas(canvas, opts = {}) {
       if (t >= 1) { particles.splice(i, 1); continue; }
 
       const radius = p.r * (1 - Math.pow(2*t - 1, 2)) * 0.9 + 8;
-      const alpha = (1 - t) * 0.32;
+      const alpha = (1 - t) * 0.3 * (0.5 + 0.5 * widthScale);
       const yFrac = 1 - (p.y / H);
       const ember = accent.ember;
       const bright = accent.bright;
