@@ -1877,3 +1877,59 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 720px) {
   .plabel { padding: 90px 24px; }
 }
+
+/* ──────────────────────────── faq ──────────────────────────── */
+.faq {
+  padding: 130px 40px;
+  background: var(--cream);
+  color: var(--ink);
+}
+.faq__inner { max-width: 880px; margin: 0 auto; }
+.faq__head { margin-bottom: 52px; text-align: center; }
+.faq__eyebrow {
+  font-size: 12px; letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--bordeaux); margin-bottom: 16px;
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.faq__eyebrow::before, .faq__eyebrow::after {
+  content: ''; width: 22px; height: 1px; background: var(--bordeaux);
+}
+.faq__title {
+  font-size: clamp(30px, 3.6vw, 50px);
+  font-weight: 700; letter-spacing: -0.03em; line-height: 1.04;
+  color: var(--ink); text-wrap: balance;
+}
+.faq__list { border-top: 1px solid var(--rule); }
+.faq__item { border-bottom: 1px solid var(--rule); }
+.faq__q {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  padding: 26px 4px;
+  font-size: clamp(18px, 2vw, 21px); font-weight: 600; letter-spacing: -0.01em;
+  color: var(--ink);
+  transition: color .2s ease;
+}
+.faq__q::-webkit-details-marker { display: none; }
+.faq__q::marker { content: ''; }
+.faq__item:hover .faq__q { color: var(--bordeaux); }
+.faq__icon { position: relative; flex: none; width: 18px; height: 18px; }
+.faq__icon::before, .faq__icon::after {
+  content: ''; position: absolute; background: var(--bordeaux);
+  transition: transform .25s ease, opacity .25s ease;
+}
+.faq__icon::before { top: 8px; left: 0; width: 18px; height: 2px; }
+.faq__icon::after { left: 8px; top: 0; width: 2px; height: 18px; }
+.faq__item[open] .faq__icon::after { transform: scaleY(0); opacity: 0; }
+.faq__a { padding: 0 4px 28px; max-width: 66ch; }
+.faq__a p { font-size: 16px; line-height: 1.62; color: var(--ink-soft); text-wrap: pretty; }
+.faq__a a {
+  color: var(--bordeaux); font-weight: 500;
+  border-bottom: 1px solid rgba(107,14,24,0.35);
+  transition: border-color .2s ease;
+}
+.faq__a a:hover { border-color: var(--bordeaux); }
+
+@media (max-width: 720px) {
+  .faq { padding: 88px 22px; }
+  .faq__q { padding: 22px 2px; }
+}
