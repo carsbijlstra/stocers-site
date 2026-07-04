@@ -200,6 +200,8 @@ function stocersEndpoint() {
   return 'https://formsubmit.co/ajax/' + stocersEmail();
 }
 
+const PAGE_LOADED_AT = Date.now();
+
 function wireForm(form, opts) {
   if (!form) return;
   const status = form.querySelector('[data-status]');
@@ -209,6 +211,8 @@ function wireForm(form, opts) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
+    // bots submit within milliseconds of page load; humans never do
+    if (Date.now() - PAGE_LOADED_AT < 3000) return;
 
     if (submit) { submit.disabled = true; submit.textContent = 'Sending…'; }
     if (status) { status.removeAttribute('data-state'); status.textContent = ''; }
