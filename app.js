@@ -188,6 +188,7 @@ function boot() {
   setupDealerForm();
   setupSamplesForm();
   setupMailLinks();
+  setupInterestLinks();
   setupSamplesPopup();
 }
 
@@ -228,6 +229,7 @@ function wireForm(form, opts) {
         if (status) { status.setAttribute('data-state', 'success'); status.textContent = opts.success; }
         if (submit) submit.textContent = 'Sent';
         form.reset();
+        try { localStorage.setItem('stocers_samples_seen', '1'); } catch (e) {}
       } else {
         throw new Error(json.message || 'submit_failed');
       }
@@ -240,17 +242,24 @@ function wireForm(form, opts) {
 
 function setupDealerForm() {
   wireForm(document.getElementById('dealer-form'), {
-    success: 'Thank you — we’ll be in touch shortly.',
+    success: 'Thank you. We will be in touch shortly.',
     error: 'Something went wrong. Please try again or email us directly.',
     payload: (data) => {
       const company = data.get('company') || '';
       const name = data.get('name') || '';
+      const interest = data.get('interest') || 'Becoming a dealer';
+      const subjectBase = interest === 'Private label' ? 'Private label enquiry'
+        : interest === 'Both' ? 'Dealer + private label enquiry'
+        : 'Dealer enquiry';
       return {
-        _subject: `Dealer enquiry — ${company || name}`,
+        _subject: `${subjectBase}: ${company || name}`,
         _template: 'table',
+        Interest: interest,
         Name: name,
         Company: company,
         Email: data.get('email') || '',
+        Phone: data.get('phone') || '',
+        'Free samples requested': data.get('samples') ? 'Yes' : 'No',
         Message: data.get('message') || '',
       };
     },
@@ -259,12 +268,12 @@ function setupDealerForm() {
 
 function setupSamplesForm() {
   wireForm(document.getElementById('samples-form'), {
-    success: 'Thank you — your free samples are on the way.',
+    success: 'Thank you. Your free samples are on the way.',
     error: 'Something went wrong. Please try again or email us directly.',
     payload: (data) => {
       const company = data.get('company') || '';
       return {
-        _subject: `FREE SAMPLES request — ${company}`,
+        _subject: `FREE SAMPLES request: ${company}`,
         _template: 'table',
         Company: company,
         Email: data.get('email') || '',
@@ -278,9 +287,20 @@ function setupMailLinks() {
   const mail = stocersEmail();
   document.querySelectorAll('[data-mail], [data-mail-foot], [data-mail-pl]').forEach((el) => {
     const subject = el.hasAttribute('data-mail-pl')
-      ? 'Private label enquiry — STOCERS'
-      : 'Dealer enquiry — STOCERS';
+      ? 'STOCERS private label enquiry'
+      : 'STOCERS dealer enquiry';
     el.setAttribute('href', 'mailto:' + mail + '?subject=' + encodeURIComponent(subject));
+  });
+}
+
+// clicking a private-label CTA preselects the matching interest in the dealer form
+function setupInterestLinks() {
+  document.querySelectorAll('[data-interest-link]').forEach((el) => {
+    el.addEventListener('click', () => {
+      const value = el.getAttribute('data-interest-link');
+      const radio = document.querySelector('#dealer-form input[name="interest"][value="' + value + '"]');
+      if (radio) radio.checked = true;
+    });
   });
 }
 
@@ -309,14 +329,30 @@ function setupSamplesPopup() {
     el.addEventListener('click', (e) => { e.preventDefault(); open(); });
   });
 
+  // automatic, once per visitor, after 10s
+  // never interrupt someone who is typing or already at the dealer form
+  const busy = () => {
+    const ae = document.activeElement;
+    if (ae && (ae.tagName === 'INPUT' || ae.tagName === 'TEXTAREA' || ae.tagName === 'SELECT')) return true;
+    const dealer = document.getElementById('dealer');
+    if (dealer) {
+      const r = dealer.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.85 && r.bottom > 0) return true;
+    }
+    return false;
+  };
+  const tryOpen = () => {
+    let seenNow = false;
+    try { seenNow = localStorage.getItem(KEY) === '1'; } catch (e) {}
+    if (seenNow) return;
+    if (popup.getAttribute('data-state') === 'open') return;
+    if (busy()) { setTimeout(tryOpen, 8000); return; }
+    open();
+    try { localStorage.setItem(KEY, '1'); } catch (e) {}
+  };
   let seen = false;
   try { seen = localStorage.getItem(KEY) === '1'; } catch (e) {}
-  if (!seen) {
-    setTimeout(() => {
-      if (popup.getAttribute('data-state') !== 'open') open();
-      try { localStorage.setItem(KEY, '1'); } catch (e) {}
-    }, 10000);
-  }
+  if (!seen) setTimeout(tryOpen, 10000);
 }
 
 if (document.readyState === 'loading') {
