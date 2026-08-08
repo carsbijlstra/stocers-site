@@ -2,14 +2,15 @@
 // Hero flame canvas · drifting embers · scroll reveals · forms · samples popup
 
 const TWEAK_DEFAULTS = {
-  palette: "oxblood",
+  palette: "brand",
   flameIntensity: 0.7,
   flameAccent: "ember",
   showEmbers: true,
-  heroHeadline: "Your <em>fire</em> starts here."
+  heroHeadline: "For every fire."
 };
 
 const PALETTES = {
+  brand:    { bordeaux: '#8C1515', deep: '#701212', dark: '#4F0D0D' },
   bordeaux: { bordeaux: '#8F0009', deep: '#5C0008', dark: '#2E0005' },
   oxblood:  { bordeaux: '#6B0E18', deep: '#3E0810', dark: '#1F0306' },
   cherry:   { bordeaux: '#A8141E', deep: '#5C0A14', dark: '#33060B' },
@@ -143,7 +144,7 @@ let flameApi = null;
 
 function applyTweaks(t) {
   const root = document.documentElement;
-  const p = PALETTES[t.palette] || PALETTES.oxblood;
+  const p = PALETTES[t.palette] || PALETTES.brand;
   const a = ACCENTS[t.flameAccent] || ACCENTS.ember;
   root.style.setProperty('--bordeaux', p.bordeaux);
   root.style.setProperty('--bordeaux-deep', p.deep);
