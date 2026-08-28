@@ -4,7 +4,10 @@
     en: {
       'nav.home': 'Home', 'nav.product': 'Product', 'nav.nature': 'Nature',
       'badge.tip': '200+ trees every year',
-      'hero.title': 'Trees funded in 2026', 'hero.sub': 'And at least 200 more every year.',
+      'hero.title': 'Trees funded and counting', 'hero.sub': 'And at least 200 more every year.',
+      'hero.more': 'and counting',
+      'hero.p0': 'Aug 2026 · 200', 'hero.p1': 'Aug 2027 · 400', 'hero.plab': 'Pledge progress',
+      'hero.live': 'Grows about 4 a week. Confirmed each year with a Trees for All certificate.',
       'hero.nl': 'Netherlands', 'hero.cta': 'View the 2026 certificate',
       'credit': 'Photo: Trees for All',
       'r.trees': 'Trees funded', 'r.date': 'Certificate date', 'r.dateval': '20 Aug 2026',
@@ -39,7 +42,10 @@
     nl: {
       'nav.home': 'Home', 'nav.product': 'Product', 'nav.nature': 'Nature',
       'badge.tip': '200+ bomen per jaar',
-      'hero.title': 'Bomen gefinancierd in 2026', 'hero.sub': 'En elk jaar minimaal 200 nieuwe.',
+      'hero.title': 'Bomen gefinancierd en de teller loopt', 'hero.sub': 'En elk jaar minimaal 200 nieuwe.',
+      'hero.more': 'en de teller loopt',
+      'hero.p0': 'aug 2026 · 200', 'hero.p1': 'aug 2027 · 400', 'hero.plab': 'Voortgang van onze belofte',
+      'hero.live': 'Groeit met ongeveer 4 per week. Elk jaar bevestigd met een Trees for All-certificaat.',
       'hero.nl': 'Nederland', 'hero.cta': 'Bekijk het certificaat 2026',
       'credit': 'Foto: Trees for All',
       'r.trees': 'Bomen gefinancierd', 'r.date': 'Datum certificaat', 'r.dateval': '20 aug 2026',
@@ -74,7 +80,10 @@
     de: {
       'nav.home': 'Startseite', 'nav.product': 'Produkt', 'nav.nature': 'Nature',
       'badge.tip': '200+ Bäume pro Jahr',
-      'hero.title': 'Bäume finanziert im Jahr 2026', 'hero.sub': 'Und jedes Jahr mindestens 200 weitere.',
+      'hero.title': 'Bäume finanziert, Tendenz steigend', 'hero.sub': 'Und jedes Jahr mindestens 200 weitere.',
+      'hero.more': 'Tendenz steigend',
+      'hero.p0': 'Aug. 2026 · 200', 'hero.p1': 'Aug. 2027 · 400', 'hero.plab': 'Fortschritt unseres Versprechens',
+      'hero.live': 'Wächst um etwa 4 pro Woche. Jährlich bestätigt mit einem Trees for All Zertifikat.',
       'hero.nl': 'Niederlande', 'hero.cta': 'Zertifikat 2026 ansehen',
       'credit': 'Foto: Trees for All',
       'r.trees': 'Finanzierte Bäume', 'r.date': 'Datum des Zertifikats', 'r.dateval': '20. Aug. 2026',
@@ -109,7 +118,10 @@
     fr: {
       'nav.home': 'Accueil', 'nav.product': 'Produit', 'nav.nature': 'Nature',
       'badge.tip': '200+ arbres par an',
-      'hero.title': 'Arbres financés en 2026', 'hero.sub': 'Et au moins 200 de plus chaque année.',
+      'hero.title': 'Arbres financés et ça continue', 'hero.sub': 'Et au moins 200 de plus chaque année.',
+      'hero.more': 'et ça continue',
+      'hero.p0': 'août 2026 · 200', 'hero.p1': 'août 2027 · 400', 'hero.plab': 'Progression de notre engagement',
+      'hero.live': 'Environ 4 de plus par semaine. Confirmé chaque année par un certificat Trees for All.',
       'hero.nl': 'Pays-Bas', 'hero.cta': 'Voir le certificat 2026',
       'credit': 'Photo : Trees for All',
       'r.trees': 'Arbres financés', 'r.date': 'Date du certificat', 'r.dateval': '20 août 2026',
@@ -195,6 +207,41 @@
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 
+  // Live count-up: anchored at the 2026 certificate (200 trees, 20 Aug 2026), accruing 200 per year.
+  (function () {
+    var intEl = document.getElementById('tcInt');
+    if (!intEl) return;
+    var ANCHOR = Date.UTC(2026, 7, 20);
+    var PER_MS = 200 / (365.2425 * 86400000);
+    function current() { return Math.floor(200 + Math.max(0, (Date.now() - ANCHOR) * PER_MS)); }
+    function render(v) { intEl.textContent = String(Math.round(v)); }
+    var target = current();
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || target === 200) {
+      render(target);
+    } else {
+      var start = null;
+      var step = function (ts) {
+        if (!start) start = ts;
+        var p = Math.min(1, (ts - start) / 1600);
+        p = 1 - Math.pow(1 - p, 3);
+        render(200 + (target - 200) * p);
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
+    setInterval(function () { render(current()); }, 60000);
+    var fill = document.getElementById('tcFill');
+    var flame = document.getElementById('tcFlame');
+    if (fill) {
+      var END = Date.UTC(2027, 7, 20);
+      var pct = Math.min(100, Math.max(0, (Date.now() - ANCHOR) / (END - ANCHOR) * 100));
+      requestAnimationFrame(function () { requestAnimationFrame(function () {
+        fill.style.width = pct + '%';
+        if (flame) flame.style.left = pct + '%';
+      }); });
+    }
+  })();
+
   var mail = atob('c2FsZXNAc3Rv' + 'Y2Vycy5jb20=');
   document.querySelectorAll('[data-mail]').forEach(function (el) {
     el.setAttribute('href', 'mailto:' + mail + '?subject=' + encodeURIComponent('STOCERS x Trees for All'));
@@ -203,28 +250,6 @@
   document.querySelectorAll('[data-ev]').forEach(function (el) {
     el.addEventListener('click', function () { track(el.getAttribute('data-ev')); });
   });
-
-  // Desktop: show the original certificate PDF inline on first click (lazy, so the file
-  // is never part of the initial load). Mobile: let the link open the native PDF viewer.
-  var certBtn = document.querySelector('[data-cert-view]');
-  var embed = document.querySelector('.nc__embed');
-  if (certBtn && embed) {
-    certBtn.addEventListener('click', function (e) {
-      if (!window.matchMedia('(min-width:900px)').matches) return;
-      e.preventDefault();
-      if (!embed.getAttribute('data-loaded')) {
-        var f = document.createElement('iframe');
-        f.setAttribute('src', certBtn.getAttribute('href') + '#view=FitH');
-        f.setAttribute('title', 'Trees for All certificate 260343');
-        f.setAttribute('loading', 'lazy');
-        embed.appendChild(f);
-        embed.setAttribute('data-loaded', '1');
-        embed.hidden = false;
-      } else {
-        embed.hidden = !embed.hidden;
-      }
-    });
-  }
 
   if ('IntersectionObserver' in window) {
     var obs = new IntersectionObserver(function (entries) {
