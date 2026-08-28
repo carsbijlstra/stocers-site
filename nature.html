@@ -3,20 +3,18 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Nature provides. STOCERS gives back. | 200+ Trees Every Year</title>
-<meta name="description" content="Nature provides, STOCERS gives back. Together with our dealers and users we help plant at least 200 trees every year. See our growing impact." />
+<title>STOCERS x Trees for All | 200+ Trees Every Year</title>
+<meta name="description" content="STOCERS funds the planting of at least 200 trees every year through Trees for All. View our annual impact, locations and official certificates." />
 <meta name="robots" content="index, follow" />
 <meta name="theme-color" content="#8C1515" />
 <link rel="canonical" href="https://stocers.com/nature" />
-
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
 <link rel="apple-touch-icon" href="assets/favicon-192.png" />
-
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="STOCERS" />
-<meta property="og:title" content="Nature provides. STOCERS gives back." />
-<meta property="og:description" content="Together, we help plant at least 200 trees every year. See our growing impact." />
+<meta property="og:title" content="STOCERS x Trees for All | 200+ trees every year" />
+<meta property="og:description" content="200 trees funded in 2026 through Trees for All, in the Netherlands and Vietnam. Certificate 260343. See the proof." />
 <meta property="og:url" content="https://stocers.com/nature" />
 <meta property="og:image" content="https://stocers.com/assets/og-brand.jpg" />
 <meta property="og:image:width" content="1200" />
@@ -24,127 +22,234 @@
 <meta property="og:locale" content="en" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://stocers.com/assets/og-brand.jpg" />
-
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="assets/nat-hero-1300.webp" fetchpriority="high" />
 <link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="nature.css" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"STOCERS x Trees for All","url":"https://stocers.com/nature","description":"STOCERS funds the planting of at least 200 trees every year through Trees for All.","publisher":{"@type":"Organization","name":"STOCERS","url":"https://stocers.com"}}</script>
 </head>
-<body>
+<body class="nature-body">
 
-<nav class="nav">
+<nav class="nav nav--nature">
   <a href="./" class="nav__logo" aria-label="STOCERS"><img src="assets/stocers-logo.svg" alt="STOCERS" /></a>
   <div class="nav__right">
     <div class="nav__links">
-      <a href="./">Home</a>
-      <a href="./#product">Product</a>
-      <a href="./#private-label">Private label</a>
+      <a href="./" data-i18n="nav.home">Home</a>
+      <a href="./#product" data-i18n="nav.product">Product</a>
+      <a href="nature" class="is-current" data-i18n="nav.nature" aria-current="page">Nature</a>
     </div>
-    <a href="./#dealer" class="nav__cta">Become a dealer</a>
+    <div class="langs" role="group" aria-label="Language">
+      <button type="button" class="langs__btn" data-lang="en">EN</button>
+      <button type="button" class="langs__btn" data-lang="nl">NL</button>
+      <button type="button" class="langs__btn" data-lang="de">DE</button>
+      <button type="button" class="langs__btn" data-lang="fr">FR</button>
+    </div>
   </div>
+  <a class="tfa-badge" href="nature" aria-label="Trees for All tree partner">
+    <span class="tfa-badge__plate"><img src="assets/trees-for-all.png" alt="Trees for All" width="576" height="727" /></span>
+    <span class="tfa-badge__tip" data-i18n="badge.tip">200+ trees every year</span>
+  </a>
 </nav>
 
-<header class="nat-hero" data-screen-label="01 Nature hero">
-  <div class="nat-hero__eyebrow">Our commitment</div>
-  <div class="nat-count">200+</div>
-  <div class="nat-count__label">Trees every year</div>
-  <img class="nat-trees" src="assets/illu-tree-growth.png" alt="Three growing trees, drawn in line art" />
-  <div class="nat-hero__scroll">Scroll</div>
+<header class="nh" data-screen-label="01 Hero">
+  <picture class="nh__bg">
+    <img src="assets/nat-hero-1300.webp" alt="Volunteers planting a young tree in a new forest" width="1300" height="867" fetchpriority="high" decoding="async" />
+  </picture>
+  <div class="nh__inner">
+    <p class="nh__eyebrow">STOCERS <span aria-hidden="true">&#215;</span> Trees for All</p>
+    <h1 class="nh__h1">
+      <span class="nh__count">200</span>
+      <span class="nh__title" data-i18n="hero.title">Trees funded in 2026</span>
+    </h1>
+    <p class="nh__sub" data-i18n="hero.sub">And at least 200 more every year.</p>
+    <p class="nh__split"><span>100</span> <span data-i18n="hero.nl">Netherlands</span> <i aria-hidden="true">&#183;</i> <span>100</span> <span>Vietnam</span></p>
+    <a class="nh__cta" href="#certificate" data-ev="certificate_view" data-i18n="hero.cta">View the 2026 certificate</a>
+  </div>
+  <span class="credit credit--hero" data-i18n="credit">Photo: Trees for All</span>
 </header>
 
-<section class="nat-lead" data-screen-label="02 Nature provides">
-  <div class="nat-lead__inner">
-    <h1 class="nat-lead__title reveal">Nature provides. STOCERS gives back.</h1>
-    <p class="nat-lead__text reveal">Our firelighters are made of wood wool and wax, so nature is our raw material. That is a responsibility, not a slogan. Together with our dealers and everyone who lights a STOCERS fire, we help plant at least 200 trees every year.</p>
-  </div>
-</section>
-
-<section class="nat-steps" data-screen-label="03 How it works">
-  <div class="nat-steps__grid">
-    <article class="nat-step reveal">
-      <div class="nat-step__icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21V10"/><path d="M12 10c0-3 2-4 4-4 0 3-1.6 4-4 4Z"/><path d="M12 14c0-3-2-4-4-4 0 3 1.6 4 4 4Z"/><path d="M6 21h12"/></svg>
+<section class="nr" data-screen-label="02 Impact receipt">
+  <div class="nr__inner">
+    <div class="nr__stats">
+      <div class="nr__stat">
+        <span class="nr__val">200</span>
+        <span class="nr__lab" data-i18n="r.trees">Trees funded</span>
       </div>
-      <div class="nat-step__num">01 Natural material</div>
-      <h2 class="nat-step__title">Wood and wax, nothing else</h2>
-      <p class="nat-step__body">Fine wood wool dipped in wax. No chemicals, no fillers, neutral in scent. What comes from the forest goes back to the forest.</p>
-    </article>
-    <article class="nat-step reveal">
-      <div class="nat-step__icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18"/><path d="M12 20v-6"/><path d="M12 14c-4 0-6-2.4-6-6 4 0 6 2.4 6 6Z"/><path d="M12 14c0-4 2-6.5 6-6.5 0 4-2 6.5-6 6.5Z"/></svg>
+      <div class="nr__stat">
+        <span class="nr__val" data-i18n="r.dateval">20 Aug 2026</span>
+        <span class="nr__lab" data-i18n="r.date">Certificate date</span>
       </div>
-      <div class="nat-step__num">02 Every year</div>
-      <h2 class="nat-step__title">At least 200 new trees</h2>
-      <p class="nat-step__body">A share of every pallet we sell goes to tree planting. Each year we fund a minimum of 200 trees, and we grow that number as we grow.</p>
-    </article>
-    <article class="nat-step reveal">
-      <div class="nat-step__icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-      </div>
-      <div class="nat-step__num">03 Open about it</div>
-      <h2 class="nat-step__title">Counted, not guessed</h2>
-      <p class="nat-step__body">We report what was actually planted, where, and when. This page is where you can follow it, season after season.</p>
-    </article>
-  </div>
-</section>
-
-<section class="nat-pledge" data-screen-label="04 Pledge">
-  <div class="nat-pledge__inner">
-    <div class="nat-pledge__kicker">The pledge</div>
-    <p class="nat-pledge__quote reveal">Every fire we help start, <em>gives a tree back.</em></p>
-    <p class="nat-pledge__note reveal">Fire is warmth, food and time spent together. It should not cost the forest that makes it possible. That is why giving back is part of the product, not an extra.</p>
-  </div>
-</section>
-
-<section class="nat-soon" data-screen-label="05 Growing impact">
-  <div class="nat-soon__inner">
-    <div>
-      <div class="nat-soon__kicker">Growing impact</div>
-      <h2 class="nat-soon__title reveal">Follow the trees we plant</h2>
-      <p class="nat-soon__text reveal">This page grows with the project. Planting numbers, locations and photos from the field will be published here as each season is completed. Are you a dealer and would you like to see the impact of your own volume, or add your name to a planting? Get in touch.</p>
-      <div class="nat-soon__actions reveal">
-        <a class="btn btn--bordeaux" data-mail href="#">Email us about this</a>
-        <a class="btn btn--ink" href="./#dealer">Become a dealer</a>
+      <div class="nr__stat">
+        <span class="nr__val">260343</span>
+        <span class="nr__lab" data-i18n="r.num">Certificate number</span>
       </div>
     </div>
-    <div class="nat-soon__art reveal">
-      <img src="assets/illu-treering.png" alt="A tree ring slice, drawn in line art" />
+    <div class="nr__note">
+      <a class="nr__logo" href="https://treesforall.nl/en/" target="_blank" rel="noopener" aria-label="Trees for All"><img src="assets/trees-for-all.png" alt="Trees for All" width="576" height="727" loading="lazy" /></a>
+      <div>
+        <span class="nr__tag" data-i18n="r.partner">Official tree partner</span>
+        <p data-i18n="r.note">STOCERS is a Trees for All tree partner. Through this partnership we fund the planting of at least 200 trees every year.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<footer class="footer" data-screen-label="06 Footer">
+<section class="nc" id="certificate" data-screen-label="03 Certificate">
+  <div class="nc__inner">
+    <div class="nc__head">
+      <span class="kick" data-i18n="c.kicker">Certificate</span>
+      <h2 class="nc__title reveal" data-i18n="c.title">Counted, not guessed.</h2>
+      <p class="nc__sub reveal" data-i18n="c.sub">We publish the proof behind our annual contribution.</p>
+    </div>
+    <div class="nc__card reveal">
+      <span class="nc__cardlogo"><img src="assets/trees-for-all.png" alt="Trees for All" width="576" height="727" loading="lazy" /></span>
+      <span class="nc__stamp">2026</span>
+      <dl class="nc__rows">
+        <div><dt data-i18n="c.l1">Issued to</dt><dd>STOCERS</dd></div>
+        <div><dt data-i18n="c.l2">Trees</dt><dd>200</dd></div>
+        <div><dt data-i18n="c.l3">Date</dt><dd data-i18n="c.dateval">20 August 2026</dd></div>
+        <div><dt data-i18n="c.l4">Certificate no.</dt><dd>260343</dd></div>
+        <div><dt data-i18n="c.l5">Planted through</dt><dd>Trees for All</dd></div>
+        <div><dt data-i18n="c.l6">Project countries</dt><dd data-i18n="c.countries">Netherlands and Vietnam</dd></div>
+      </dl>
+      <div class="nc__actions">
+        <a class="btn btn--bordeaux" href="assets/stocers-trees-for-all-certificate-2026.pdf" target="_blank" rel="noopener" data-cert-view data-ev="certificate_view" data-i18n="c.view">View certificate</a>
+        <a class="btn btn--ink" href="assets/stocers-trees-for-all-certificate-2026.pdf" download="STOCERS-Trees-for-All-certificate-2026.pdf" data-ev="certificate_download" data-i18n="c.dl">Download PDF</a>
+      </div>
+      <div class="nc__embed" hidden></div>
+      <p class="nc__file" data-i18n="c.file">Official Trees for All certificate (PDF)</p>
+    </div>
+  </div>
+</section>
+
+<section class="nw" data-screen-label="04 How it works">
+  <div class="nw__inner">
+    <figure class="nw__fig">
+      <img src="assets/nat-plantday-1200.webp" alt="Volunteer digging a planting hole on a Trees for All planting day" width="1200" height="1799" loading="lazy" decoding="async" />
+      <figcaption class="credit" data-i18n="credit">Photo: Trees for All</figcaption>
+    </figure>
+    <div class="nw__body">
+      <span class="kick" data-i18n="w.kicker">How it works</span>
+      <h2 class="nw__title reveal" data-i18n="w.title">How our partnership works</h2>
+      <ol class="nw__steps">
+        <li class="reveal"><span class="nw__num">01</span><h3 data-i18n="w.1t">STOCERS funds</h3><p data-i18n="w.1b">Every year, STOCERS contributes to tree planting through Trees for All.</p></li>
+        <li class="reveal"><span class="nw__num">02</span><h3 data-i18n="w.2t">Trees for All plants</h3><p data-i18n="w.2b">Trees for All works with its project partners to plant and grow trees in the Netherlands and abroad.</p></li>
+        <li class="reveal"><span class="nw__num">03</span><h3 data-i18n="w.3t">We publish the proof</h3><p data-i18n="w.3b">Each year we publish the confirmed number, location information and certificate here.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="ni" data-screen-label="05 2026 impact">
+  <div class="ni__inner">
+    <span class="kick kick--light" data-i18n="i.kicker">2026 impact</span>
+    <h2 class="ni__title reveal" data-i18n="i.title">200 trees, two countries</h2>
+    <span class="ni__rule" aria-hidden="true"></span>
+    <div class="ni__split">
+      <div class="ni__half reveal">
+        <span class="ni__num">100</span>
+        <span class="ni__where" data-i18n="i.nl">The Netherlands</span>
+      </div>
+      <div class="ni__half reveal">
+        <span class="ni__num">100</span>
+        <span class="ni__where">Vietnam</span>
+      </div>
+    </div>
+    <p class="ni__note reveal" data-i18n="i.note">Our 2026 Trees for All certificate confirms a contribution for 200 trees in the Netherlands and Vietnam.</p>
+    <img class="ni__illu" src="assets/illu-tree-growth-white.webp" alt="" aria-hidden="true" width="1200" height="474" loading="lazy" decoding="async" />
+  </div>
+</section>
+
+<section class="ny" data-screen-label="06 Why trees matter">
+  <div class="ny__inner">
+    <div class="ny__body">
+      <span class="kick" data-i18n="y.kicker">Impact areas</span>
+      <h2 class="ny__title reveal" data-i18n="y.title">Why trees matter</h2>
+      <p class="ny__text reveal" data-i18n="y.body">Trees contribute to climate resilience, biodiversity and healthier living environments. That is why STOCERS chooses to support tree planting through Trees for All.</p>
+      <ul class="ny__list">
+        <li class="reveal" data-i18n="y.1">Better climate</li>
+        <li class="reveal" data-i18n="y.2">Biodiversity</li>
+        <li class="reveal" data-i18n="y.3">Healthy living conditions</li>
+      </ul>
+    </div>
+    <figure class="ny__fig">
+      <img src="assets/nat-young-1200.webp" alt="Young tree leaves backlit by the sun in a Dutch forest" width="1200" height="1800" loading="lazy" decoding="async" />
+      <figcaption class="credit" data-i18n="credit">Photo: Trees for All</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="na" data-screen-label="07 Growing record">
+  <div class="na__inner">
+    <span class="kick" data-i18n="a.kicker">Archive</span>
+    <h2 class="na__title reveal" data-i18n="a.title">Our growing record</h2>
+    <div class="na__table reveal">
+      <div class="na__row na__row--head">
+        <span data-i18n="a.year">Year</span>
+        <span data-i18n="a.trees">Trees</span>
+        <span data-i18n="a.where">Where</span>
+        <span data-i18n="a.proof">Proof</span>
+      </div>
+      <div class="na__row">
+        <span data-l="Year">2026</span>
+        <span data-l="Trees">200</span>
+        <span data-l="Where" data-i18n="a.where26">Netherlands + Vietnam</span>
+        <span data-l="Proof"><a class="na__cert" href="assets/stocers-trees-for-all-certificate-2026.pdf" target="_blank" rel="noopener" data-ev="certificate_view" data-i18n="a.cert">Certificate 260343</a></span>
+      </div>
+    </div>
+    <p class="na__next reveal" data-i18n="a.next">2027: at least 200 trees, published as soon as the certificate is confirmed.</p>
+  </div>
+</section>
+
+<section class="nz" data-screen-label="08 Closing">
+  <picture class="nz__bg">
+    <img src="assets/nat-forest-1600.webp" alt="Sunlit path through a young Dutch forest" width="1600" height="1063" loading="lazy" decoding="async" />
+  </picture>
+  <div class="nz__inner">
+    <h2 class="nz__title reveal"><span data-i18n="z.title1">Nature provides.</span><span data-i18n="z.title2">STOCERS gives back.</span></h2>
+    <p class="nz__body reveal" data-i18n="z.body">Our commitment is simple: fund at least 200 trees every year through Trees for All, and publish the proof.</p>
+    <div class="nz__actions reveal">
+      <a class="btn btn--ember" href="./" data-i18n="z.cta1">Discover STOCERS</a>
+      <a class="btn btn--ghost" href="./#dealer" data-ev="become_dealer_click" data-i18n="z.cta2">Become a dealer</a>
+    </div>
+  </div>
+  <span class="credit credit--hero" data-i18n="credit">Photo: Trees for All</span>
+</section>
+
+<footer class="footer" data-screen-label="09 Footer">
   <div class="footer__inner">
     <div class="footer__brand">
       <span class="footer__lockup"><img src="assets/stocers-logo.svg" alt="STOCERS" /></span>
-      <p class="footer__tag">Natural wood wool firelighters with reliable performance and honest value. One match, every time.</p>
+      <p class="footer__tag" data-i18n="f.tag">Natural wood wool firelighters with reliable performance and honest value. One match, every time.</p>
     </div>
     <div class="footer__col">
-      <h4>Explore</h4>
+      <h4 data-i18n="f.explore">Explore</h4>
       <ul>
-        <li><a href="./">Home</a></li>
-        <li><a href="./#product">The product</a></li>
-        <li><a href="./#packaging">Order sizes</a></li>
+        <li><a href="./" data-i18n="nav.home">Home</a></li>
+        <li><a href="./#product" data-i18n="f.product">The product</a></li>
+        <li><a href="./#packaging" data-i18n="f.sizes">Order sizes</a></li>
       </ul>
     </div>
     <div class="footer__col">
-      <h4>Dealers</h4>
+      <h4 data-i18n="f.dealers">Dealers</h4>
       <ul>
-        <li><a href="./#dealer">Become a dealer</a></li>
+        <li><a href="./#dealer" data-i18n="f.dealer">Become a dealer</a></li>
         <li><a href="./#private-label">Private label</a></li>
-        <li><a href="#" data-mail>Email us</a></li>
+        <li><a href="#" data-mail data-i18n="f.mail">Email us</a></li>
       </ul>
     </div>
     <div class="footer__col">
       <h4>Nature</h4>
       <ul>
-        <li><a href="nature">200+ trees every year</a></li>
+        <li><a href="assets/stocers-trees-for-all-certificate-2026.pdf" target="_blank" rel="noopener" data-i18n="f.cert">Certificate 2026</a></li>
+        <li><a href="https://treesforall.nl/en/" target="_blank" rel="noopener">Trees for All</a></li>
       </ul>
     </div>
   </div>
   <div class="footer__legal">
-    <span>© <span id="year">2026</span> STOCERS. All rights reserved.</span>
+    <span>&copy; <span id="year">2026</span> STOCERS. <span data-i18n="f.rights">All rights reserved.</span></span>
     <span>STOCERS. For every fire.</span>
   </div>
 </footer>
